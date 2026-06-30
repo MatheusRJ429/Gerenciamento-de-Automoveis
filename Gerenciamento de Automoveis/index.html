@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drive X | Sistema de Concessionaria</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">DX</div>
+          <div>
+            <strong>Drive X</strong>
+            <span>Concessionaria Premium</span>
+          </div>
+        </div>
+
+        <nav class="menu" aria-label="Menu principal">
+          <button class="menu-item active" data-screen="inicio">Inicio</button>
+          <button class="menu-item" data-screen="clientes">Cadastro de clientes</button>
+          <button class="menu-item" data-screen="carros">Cadastro de carros</button>
+          <button class="menu-item" data-screen="precos">Tabela de precos</button>
+          <button class="menu-item" data-screen="documentacao">Documentacao</button>
+          <button class="menu-item" data-screen="suporte">Suporte</button>
+        </nav>
+
+        <div class="sidebar-contact">
+          <span>Central Drive X</span>
+          <strong>(92) 98444-2026</strong>
+          <small>Atendimento de segunda a sabado</small>
+        </div>
+      </aside>
+
+      <section class="content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Sistema comercial</p>
+            <h1 id="page-title">Inicio</h1>
+          </div>
+          <div class="topbar-actions">
+            <a class="phone-button" href="tel:+5592984442026">(92) 98444-2026</a>
+            <span class="status-pill">Online</span>
+          </div>
+        </header>
+
+        <section class="screen active" id="inicio">
+          <div class="hero-panel">
+            <div>
+              <p class="eyebrow">Painel geral</p>
+              <h2>Gestao completa da concessionaria Drive X</h2>
+              <p>Cadastre clientes, controle carros em estoque, acompanhe propostas, consulte precos e ofereca suporte em um painel unico.</p>
+              <div class="hero-actions">
+                <button class="primary-button menu-shortcut" data-screen="clientes" type="button">Novo cliente</button>
+                <button class="secondary-button menu-shortcut" data-screen="carros" type="button">Cadastrar carro</button>
+              </div>
+            </div>
+            <div class="hero-card">
+              <span>Meta do mes</span>
+              <strong>72%</strong>
+              <div class="progress-bar"><span style="width: 72%"></span></div>
+              <small>18 vendas concluidas de 25 previstas</small>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span>Clientes cadastrados</span>
+              <strong id="stat-clientes">128</strong>
+              <small>+16 novos esta semana</small>
+            </article>
+            <article class="stat-card">
+              <span>Carros no estoque</span>
+              <strong id="stat-carros">42</strong>
+              <small>Volkswagen, Nissan e seminovos</small>
+            </article>
+            <article class="stat-card">
+              <span>Vendas no mes</span>
+              <strong>18</strong>
+              <small>Ticket medio R$ 148.600</small>
+            </article>
+            <article class="stat-card">
+              <span>Propostas abertas</span>
+              <strong>31</strong>
+              <small>9 aguardando documentacao</small>
+            </article>
+          </div>
+
+          <div class="dashboard-grid">
+            <section class="panel">
+              <div class="section-heading compact">
+                <div>
+                  <p class="eyebrow">Desempenho</p>
+                  <h2>Vendas por categoria</h2>
+                </div>
+              </div>
+              <div class="chart-list">
+                <div><span>SUV</span><strong>44%</strong><i style="width: 44%"></i></div>
+                <div><span>Hatch</span><strong>28%</strong><i style="width: 28%"></i></div>
+                <div><span>Sedan</span><strong>18%</strong><i style="width: 18%"></i></div>
+                <div><span>Picape</span><strong>10%</strong><i style="width: 10%"></i></div>
+              </div>
+            </section>
+
+            <section class="panel">
+              <div class="section-heading compact">
+                <div>
+                  <p class="eyebrow">Atendimento</p>
+                  <h2>Proximos contatos</h2>
+                </div>
+              </div>
+              <ul class="activity-list">
+                <li><strong>Maria Souza</strong><span>Retorno sobre Nissan Kicks as 14:30</span></li>
+                <li><strong>Joao Almeida</strong><span>Enviar simulacao do T-Cross</span></li>
+                <li><strong>Carla Nunes</strong><span>Confirmar documentos do financiamento</span></li>
+              </ul>
+            </section>
+          </div>
+        </section>
+
+        <section class="screen" id="clientes">
+          <div class="panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Relacionamento</p>
+                <h2>Cadastro de clientes</h2>
+              </div>
+              <button class="secondary-button clear-form" data-form="cliente-form" type="button">Limpar campos</button>
+            </div>
+
+            <form class="form-grid two-columns" id="cliente-form">
+              <label>
+                Nome completo
+                <input id="cliente-nome" type="text" placeholder="Ex: Ana Beatriz Lima" required />
+              </label>
+              <label>
+                CPF
+                <input id="cliente-cpf" type="text" placeholder="000.000.000-00" required />
+              </label>
+              <label>
+                Telefone
+                <input id="cliente-telefone" type="tel" placeholder="(92) 99999-0000" required />
+              </label>
+              <label>
+                E-mail
+                <input id="cliente-email" type="email" placeholder="cliente@email.com" required />
+              </label>
+              <label>
+                Modelo de interesse
+                <select id="cliente-modelo">
+                  <option>Volkswagen Polo Track</option>
+                  <option>Volkswagen Nivus Comfortline</option>
+                  <option>Volkswagen T-Cross Highline</option>
+                  <option>Nissan Versa Advance</option>
+                  <option>Nissan Kicks Exclusive</option>
+                  <option>Nissan Frontier Attack</option>
+                  <option>Fiat Pulse Audace</option>
+                  <option>Fiat Fastback Impetus</option>
+                  <option>Fiat Toro Volcano</option>
+                </select>
+              </label>
+              <label>
+                Status do atendimento
+                <select id="cliente-status">
+                  <option>Novo lead</option>
+                  <option>Em negociacao</option>
+                  <option>Documentacao pendente</option>
+                  <option>Venda concluida</option>
+                </select>
+              </label>
+              <label class="full-width">
+                Observacoes
+                <textarea id="cliente-observacao" placeholder="Preferencias, entrada, prazo, proposta e observacoes do atendimento"></textarea>
+              </label>
+              <button class="primary-button" type="submit">Salvar cliente</button>
+            </form>
+          </div>
+
+          <div class="panel">
+            <div class="section-heading compact">
+              <div>
+                <p class="eyebrow">Nomes cadastrados</p>
+                <h2>Clientes recentes</h2>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Modelo</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="clientes-tabela">
+                  <tr>
+                    <td>Maria Souza</td>
+                    <td>(92) 98111-2026</td>
+                    <td>Nissan Kicks Exclusive</td>
+                    <td><span class="tag available">Em negociacao</span></td>
+                  </tr>
+                  <tr>
+                    <td>Joao Almeida</td>
+                    <td>(92) 98222-2026</td>
+                    <td>Volkswagen T-Cross Highline</td>
+                    <td><span class="tag reserved">Documentacao</span></td>
+                  </tr>
+                  <tr>
+                    <td>Carla Nunes</td>
+                    <td>(92) 98333-2026</td>
+                    <td>Volkswagen Polo Track</td>
+                    <td><span class="tag available">Novo lead</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="carros">
+          <div class="panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Estoque</p>
+                <h2>Cadastro de carros</h2>
+              </div>
+              <button class="secondary-button clear-form" data-form="carro-form" type="button">Limpar campos</button>
+            </div>
+
+            <form class="form-grid three-columns" id="carro-form">
+              <label>
+                Marca
+                <select id="carro-marca">
+                  <option>Volkswagen</option>
+                  <option>Nissan</option>
+                  <option>Fiat</option>
+                  <option>Chevrolet</option>
+                  <option>Fiat</option>
+                  <option>Toyota</option>
+                </select>
+              </label>
+              <label>
+                Modelo
+                <input id="carro-modelo" type="text" placeholder="Ex: Kicks Exclusive" required />
+              </label>
+              <label>
+                Ano
+                <input id="carro-ano" type="number" value="2026" min="2000" max="2030" required />
+              </label>
+              <label>
+                Cor
+                <input id="carro-cor" type="text" placeholder="Ex: Branco perolizado" required />
+              </label>
+              <label>
+                Quilometragem
+                <input id="carro-km" type="text" placeholder="Ex: 0 km" required />
+              </label>
+              <label>
+                Preco a vista
+                <input id="carro-preco" type="text" placeholder="R$ 154.990" required />
+              </label>
+              <label>
+                Entrada
+                <input id="carro-entrada" type="text" placeholder="R$ 31.000" required />
+              </label>
+              <label>
+                Parcelas
+                <input id="carro-parcelas" type="text" placeholder="60x R$ 2.980" required />
+              </label>
+              <label>
+                Status
+                <select id="carro-status">
+                  <option>Disponivel</option>
+                  <option>Reservado</option>
+                  <option>Vendido</option>
+                </select>
+              </label>
+              <button class="primary-button" type="submit">Salvar carro</button>
+            </form>
+          </div>
+
+          <div class="panel">
+            <div class="section-heading compact">
+              <div>
+                <p class="eyebrow">Catalogo</p>
+                <h2>Modelos em destaque</h2>
+              </div>
+            </div>
+            <div class="car-grid" id="carros-grid">
+              <article class="car-card">
+                <div class="car-visual polo"></div>
+                <span class="brand-badge">Volkswagen</span>
+                <h3>Polo Track</h3>
+                <p>Hatch compacto para cidade, economico e facil de estacionar.</p>
+                <ul class="price-list">
+                  <li><span>Entrada</span><strong>R$ 18.000</strong></li>
+                  <li><span>Parcelas</span><strong>60x R$ 1.890</strong></li>
+                  <li><span>A vista</span><strong>R$ 89.990</strong></li>
+                </ul>
+              </article>
+              <article class="car-card">
+                <div class="car-visual nivus"></div>
+                <span class="brand-badge">Volkswagen</span>
+                <h3>Nivus Comfortline</h3>
+                <p>SUV coupe com visual moderno, multimidia e bom espaco interno.</p>
+                <ul class="price-list">
+                  <li><span>Entrada</span><strong>R$ 28.000</strong></li>
+                  <li><span>Parcelas</span><strong>60x R$ 2.690</strong></li>
+                  <li><span>A vista</span><strong>R$ 139.990</strong></li>
+                </ul>
+              </article>
+              <article class="car-card">
+                <div class="car-visual tcross"></div>
+                <span class="brand-badge">Volkswagen</span>
+                <h3>T-Cross Highline</h3>
+                <p>SUV completo, com conforto, seguranca e desempenho para familia.</p>
+                <ul class="price-list">
+                  <li><span>Entrada</span><strong>R$ 36.000</strong></li>
+                  <li><span>Parcelas</span><strong>60x R$ 3.250</strong></li>
+                  <li><span>A vista</span><strong>R$ 169.990</strong></li>
+                </ul>
+              </article>
+              <article class="car-card">
+                <div class="car-visual versa"></div>
+                <span class="brand-badge">Nissan</span>
+                <h3>Versa Advance</h3>
+                <p>Sedan confortavel, porta-malas amplo e bom consumo urbano.</p>
+                <ul class="price-list">
+                  <li><span>Entrada</span><strong>R$ 22.000</strong></li>
+                  <li><span>Parcelas</span><strong>60x R$ 2.190</strong></li>
+                  <li><span>A vista</span><strong>R$ 111.990</strong></li>
+                </ul>
+              </article>
+              <article class="car-card">
+                <div class="car-visual kicks"></div>
+                <span class="brand-badge">Nissan</span>
+                <h3>Kicks Exclusive</h3>
+                <p>SUV urbano com tecnologia, conforto e pacote de seguranca.</p>
+                <ul class="price-list">
+                  <li><span>Entrada</span><strong>R$ 31.000</strong></li>
+                  <li><span>Parcelas</span><strong>60x R$ 2.980</strong></li>
+                  <li><span>A vista</span><strong>R$ 154.990</strong></li>
+                </ul>
+              </article>
+              <article class="car-card">
+                <div class="car-visual frontier"></div>
+                <span class="brand-badge">Nissan</span>
+                <h3>Frontier Attack</h3>
+                <p>Picape robusta para trabalho, estrada e uso familiar.</p>
+                <ul class="price-list">
+                  <li><span>Entrada</span><strong>R$ 58.000</strong></li>
+                  <li><span>Parcelas</span><strong>60x R$ 4.990</strong></li>
+                  <li><span>A vista</span><strong>R$ 289.990</strong></li>
+                </ul>
+              </article>
+              <article class="car-card">
+                <div class="car-visual pulse"></div>
+                <span class="brand-badge">Fiat</span>
+                <h3>Pulse Audace</h3>
+                <p>SUV compacto automatico com motor turbo, conforto e tecnologia.</p>
+                <ul class="price-list">
+                  <li><span>Entrada</span><strong>R$ 24.000</strong></li>
+                  <li><span>Parcelas</span><strong>60x R$ 2.350</strong></li>
+                  <li><span>A vista</span><strong>R$ 119.990</strong></li>
+                </ul>
+              </article>
+              <article class="car-card">
+                <div class="car-visual fastback"></div>
+                <span class="brand-badge">Fiat</span>
+                <h3>Fastback Impetus</h3>
+                <p>SUV coupe automatico com porta-malas amplo e visual esportivo.</p>
+                <ul class="price-list">
+                  <li><span>Entrada</span><strong>R$ 32.000</strong></li>
+                  <li><span>Parcelas</span><strong>60x R$ 3.190</strong></li>
+                  <li><span>A vista</span><strong>R$ 159.990</strong></li>
+                </ul>
+              </article>
+              <article class="car-card">
+                <div class="car-visual toro"></div>
+                <span class="brand-badge">Fiat</span>
+                <h3>Toro Volcano</h3>
+                <p>Picape automatica com robustez, conforto e excelente versatilidade.</p>
+                <ul class="price-list">
+                  <li><span>Entrada</span><strong>R$ 40.000</strong></li>
+                  <li><span>Parcelas</span><strong>60x R$ 3.850</strong></li>
+                  <li><span>A vista</span><strong>R$ 199.990</strong></li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="precos">
+          <div class="panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Comercial</p>
+                <h2>Tabela de precos</h2>
+              </div>
+              <button class="secondary-button" type="button">Atualizada em 22/06/2026</button>
+            </div>
+            <div class="filter-bar">
+              <label>
+                Data inicial
+                <input id="filtro-data-inicio" type="date" />
+              </label>
+              <label>
+                Data final
+                <input id="filtro-data-fim" type="date" />
+              </label>
+              <button class="primary-button" id="filtrar-precos" type="button">Ver tabela</button>
+              <button class="secondary-button" id="limpar-filtro-precos" type="button">Mostrar tudo</button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Data</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Ano</th>
+                    <th>Entrada</th>
+                    <th>Parcelas</th>
+                    <th>Preco a vista</th>
+                    <th>IPVA estimado</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="precos-tabela">
+                  <tr data-date="2026-06-22">
+                    <td>22/06/2026</td>
+                    <td>Volkswagen</td>
+                    <td>Polo Track</td>
+                    <td>2026</td>
+                    <td>R$ 18.000</td>
+                    <td>60x R$ 1.890</td>
+                    <td>R$ 89.990</td>
+                    <td>R$ 2.700</td>
+                    <td><span class="tag available">Disponivel</span></td>
+                  </tr>
+                  <tr data-date="2026-06-21">
+                    <td>21/06/2026</td>
+                    <td>Volkswagen</td>
+                    <td>Nivus Comfortline</td>
+                    <td>2026</td>
+                    <td>R$ 28.000</td>
+                    <td>60x R$ 2.690</td>
+                    <td>R$ 139.990</td>
+                    <td>R$ 4.200</td>
+                    <td><span class="tag available">Disponivel</span></td>
+                  </tr>
+                  <tr data-date="2026-06-20">
+                    <td>20/06/2026</td>
+                    <td>Volkswagen</td>
+                    <td>T-Cross Highline</td>
+                    <td>2026</td>
+                    <td>R$ 36.000</td>
+                    <td>60x R$ 3.250</td>
+                    <td>R$ 169.990</td>
+                    <td>R$ 5.100</td>
+                    <td><span class="tag reserved">Reservado</span></td>
+                  </tr>
+                  <tr data-date="2026-06-19">
+                    <td>19/06/2026</td>
+                    <td>Nissan</td>
+                    <td>Versa Advance</td>
+                    <td>2026</td>
+                    <td>R$ 22.000</td>
+                    <td>60x R$ 2.190</td>
+                    <td>R$ 111.990</td>
+                    <td>R$ 3.360</td>
+                    <td><span class="tag available">Disponivel</span></td>
+                  </tr>
+                  <tr data-date="2026-06-18">
+                    <td>18/06/2026</td>
+                    <td>Nissan</td>
+                    <td>Kicks Exclusive</td>
+                    <td>2026</td>
+                    <td>R$ 31.000</td>
+                    <td>60x R$ 2.980</td>
+                    <td>R$ 154.990</td>
+                    <td>R$ 4.650</td>
+                    <td><span class="tag available">Disponivel</span></td>
+                  </tr>
+                  <tr data-date="2026-06-17">
+                    <td>17/06/2026</td>
+                    <td>Nissan</td>
+                    <td>Frontier Attack</td>
+                    <td>2026</td>
+                    <td>R$ 58.000</td>
+                    <td>60x R$ 4.990</td>
+                    <td>R$ 289.990</td>
+                    <td>R$ 8.700</td>
+                    <td><span class="tag available">Disponivel</span></td>
+                  </tr>
+                  <tr data-date="2026-06-16">
+                    <td>16/06/2026</td>
+                    <td>Fiat</td>
+                    <td>Pulse Audace</td>
+                    <td>2026</td>
+                    <td>R$ 24.000</td>
+                    <td>60x R$ 2.350</td>
+                    <td>R$ 119.990</td>
+                    <td>R$ 3.600</td>
+                    <td><span class="tag available">Disponivel</span></td>
+                  </tr>
+                  <tr data-date="2026-06-15">
+                    <td>15/06/2026</td>
+                    <td>Fiat</td>
+                    <td>Fastback Impetus</td>
+                    <td>2026</td>
+                    <td>R$ 32.000</td>
+                    <td>60x R$ 3.190</td>
+                    <td>R$ 159.990</td>
+                    <td>R$ 4.800</td>
+                    <td><span class="tag available">Disponivel</span></td>
+                  </tr>
+                  <tr data-date="2026-06-14">
+                    <td>14/06/2026</td>
+                    <td>Fiat</td>
+                    <td>Toro Volcano</td>
+                    <td>2026</td>
+                    <td>R$ 40.000</td>
+                    <td>60x R$ 3.850</td>
+                    <td>R$ 199.990</td>
+                    <td>R$ 6.000</td>
+                    <td><span class="tag reserved">Reservado</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="documentacao">
+          <div class="panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Checklist</p>
+                <h2>Documentacao para compra</h2>
+              </div>
+              <button class="secondary-button" id="gerar-protocolo" type="button">Gerar protocolo</button>
+            </div>
+            <div class="docs-grid">
+              <label class="check-card"><input type="checkbox" /> CNH ou RG do comprador</label>
+              <label class="check-card"><input type="checkbox" /> CPF regularizado</label>
+              <label class="check-card"><input type="checkbox" /> Comprovante de residencia</label>
+              <label class="check-card"><input type="checkbox" /> Comprovante de renda</label>
+              <label class="check-card"><input type="checkbox" /> Contrato assinado</label>
+              <label class="check-card"><input type="checkbox" /> Laudo do usado na troca</label>
+              <label class="check-card"><input type="checkbox" /> Aprovacao do financiamento</label>
+              <label class="check-card"><input type="checkbox" /> Nota fiscal emitida</label>
+              <label class="check-card"><input type="checkbox" /> Entrega tecnica agendada</label>
+            </div>
+            <div class="note-box">
+              <strong>Status:</strong> acompanhe cada etapa antes de liberar a entrega do veiculo.
+            </div>
+            <div class="protocol-box" id="protocolo-box">
+              <strong>Nenhum protocolo gerado ainda.</strong>
+              <span>Marque os documentos conferidos e clique em gerar protocolo.</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="suporte">
+          <div class="support-grid">
+            <section class="panel support-card">
+              <p class="eyebrow">Atendimento</p>
+              <h2>Suporte Drive X</h2>
+              <p>Fale com a central para duvidas sobre financiamento, estoque, documentos, garantia e agendamento de test-drive.</p>
+              <div class="contact-list">
+                <a href="tel:+5592984442026"><span>Telefone</span><strong>(92) 98444-2026</strong></a>
+                <a href="https://wa.me/5592984442026"><span>WhatsApp</span><strong>(92) 98444-2026</strong></a>
+                <a href="mailto:suporte@drivex.com"><span>E-mail</span><strong>suporte@drivex.com</strong></a>
+              </div>
+            </section>
+
+            <section class="panel">
+              <div class="section-heading compact">
+                <div>
+                  <p class="eyebrow">Solicitacao</p>
+                  <h2>Abrir chamado</h2>
+                </div>
+              </div>
+              <form class="form-grid" id="suporte-form">
+                <label>
+                  Nome
+                  <input type="text" placeholder="Seu nome" required />
+                </label>
+                <label>
+                  Tipo de suporte
+                  <select>
+                    <option>Financiamento</option>
+                    <option>Documentacao</option>
+                    <option>Cadastro de cliente</option>
+                    <option>Cadastro de carro</option>
+                    <option>Garantia e pos-venda</option>
+                  </select>
+                </label>
+                <label>
+                  Mensagem
+                  <textarea placeholder="Descreva a solicitacao"></textarea>
+                </label>
+                <button class="primary-button" type="submit">Enviar chamado</button>
+              </form>
+            </section>
+          </div>
+
+          <section class="panel">
+            <div class="section-heading compact">
+              <div>
+                <p class="eyebrow">Perguntas rapidas</p>
+                <h2>Informacoes importantes</h2>
+              </div>
+            </div>
+            <div class="faq-grid">
+              <article>
+                <strong>Horario</strong>
+                <p>Segunda a sexta, 08h as 18h. Sabado, 08h as 13h.</p>
+              </article>
+              <article>
+                <strong>Test-drive</strong>
+                <p>Agendamento pelo telefone ou diretamente no cadastro do cliente.</p>
+              </article>
+              <article>
+                <strong>Financiamento</strong>
+                <p>Simulacao com entrada, parcelas e aprovacao de credito.</p>
+              </article>
+            </div>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
